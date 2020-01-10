@@ -2,7 +2,7 @@
 
 Name:		jai-imageio-core
 Version:	1.2
-Release:	0.13.%{cvs_ver}cvs%{?dist}
+Release:	0.14.%{cvs_ver}cvs%{?dist}
 Summary:	Core Java Advanced Imaging Image I/O Tools API
 
 Group:		System Environment/Libraries
@@ -98,6 +98,9 @@ cp -av build/linux-i586/javadocs/docs-jcp/* $RPM_BUILD_ROOT%{_javadocdir}/%{name
 
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.2-0.14.20100217cvs
+- Mass rebuild 2013-12-27
+
 * Fri Jun 28 2013 Mikolaj Izdebski <mizdebsk@redhat.com> - 1.2-0.13.20100217cvs
 - Rebuild to regenerate API documentation
 - Resolves: CVE-2013-1571
