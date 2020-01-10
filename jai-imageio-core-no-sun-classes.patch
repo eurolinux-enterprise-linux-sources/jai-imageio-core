@@ -1,0 +1,54 @@
+Index: src/share/classes/com/sun/media/imageioimpl/plugins/pnm/PNMImageReader.java
+===================================================================
+RCS file: /cvs/jai-imageio-core/src/share/classes/com/sun/media/imageioimpl/plugins/pnm/PNMImageReader.java,v
+retrieving revision 1.1
+diff -u -3 -p -r1.1 PNMImageReader.java
+--- src/share/classes/com/sun/media/imageioimpl/plugins/pnm/PNMImageReader.java	11 Feb 2005 05:01:40 -0000	1.1
++++ src/share/classes/com/sun/media/imageioimpl/plugins/pnm/PNMImageReader.java	11 Nov 2009 20:17:16 -0000
+@@ -72,6 +72,7 @@ import javax.imageio.spi.ImageReaderSpi;
+ import javax.imageio.stream.ImageInputStream;
+ 
+ import java.io.*;
++import java.security.PrivilegedAction;
+ import java.util.ArrayList;
+ import java.util.Iterator;
+ import java.util.StringTokenizer;
+@@ -97,7 +98,10 @@ public class PNMImageReader extends Imag
+     static {
+         if (lineSeparator == null) {
+             String ls = (String)java.security.AccessController.doPrivileged(
+-               new sun.security.action.GetPropertyAction("line.separator"));
++               new PrivilegedAction(){
++                public Object run() {
++                    return System.getProperty("line.separator");
++                }});
+             lineSeparator = ls.getBytes();
+         }
+     }
+Index: src/share/classes/com/sun/media/imageioimpl/plugins/pnm/PNMImageWriter.java
+===================================================================
+RCS file: /cvs/jai-imageio-core/src/share/classes/com/sun/media/imageioimpl/plugins/pnm/PNMImageWriter.java,v
+retrieving revision 1.1
+diff -u -3 -p -r1.1 PNMImageWriter.java
+--- src/share/classes/com/sun/media/imageioimpl/plugins/pnm/PNMImageWriter.java	11 Feb 2005 05:01:40 -0000	1.1
++++ src/share/classes/com/sun/media/imageioimpl/plugins/pnm/PNMImageWriter.java	11 Nov 2009 20:17:16 -0000
+@@ -60,6 +60,7 @@ import java.awt.image.WritableRaster;
+ 
+ import java.io.IOException;
+ 
++import java.security.PrivilegedAction;
+ import java.util.Iterator;
+ 
+ import javax.imageio.IIOImage;
+@@ -109,7 +110,10 @@ public class PNMImageWriter extends Imag
+     static {
+         if (lineSeparator == null) {
+             String ls = (String)java.security.AccessController.doPrivileged(
+-               new sun.security.action.GetPropertyAction("line.separator"));
++               new PrivilegedAction(){
++                public Object run() {
++                    return System.getProperty("line.separator");
++                }});
+             lineSeparator = ls.getBytes();
+         }
+     }

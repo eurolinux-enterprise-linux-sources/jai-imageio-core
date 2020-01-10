@@ -1,0 +1,28 @@
+diff -urN jai-imageio-core-cvs20091111-CLEANED/src/share/services/javax.imageio.spi.ImageReaderSpi zzx2/src/share/services/javax.imageio.spi.ImageReaderSpi
+--- jai-imageio-core-cvs20091111-CLEANED/src/share/services/javax.imageio.spi.ImageReaderSpi	2007-09-04 20:21:08.000000000 -0400
++++ zzx2/src/share/services/javax.imageio.spi.ImageReaderSpi	2009-11-11 13:32:55.845761231 -0500
+@@ -44,10 +44,6 @@
+ #
+ # --- JAI-Image I/O ImageReader plug-ins ---
+ #
+-com.sun.media.imageioimpl.plugins.jpeg.CLibJPEGImageReaderSpi
+-com.sun.media.imageioimpl.plugins.png.CLibPNGImageReaderSpi
+-com.sun.media.imageioimpl.plugins.jpeg2000.J2KImageReaderSpi
+-com.sun.media.imageioimpl.plugins.jpeg2000.J2KImageReaderCodecLibSpi
+ com.sun.media.imageioimpl.plugins.wbmp.WBMPImageReaderSpi
+ com.sun.media.imageioimpl.plugins.bmp.BMPImageReaderSpi
+ com.sun.media.imageioimpl.plugins.pcx.PCXImageReaderSpi
+diff -urN jai-imageio-core-cvs20091111-CLEANED/src/share/services/javax.imageio.spi.ImageWriterSpi zzx2/src/share/services/javax.imageio.spi.ImageWriterSpi
+--- jai-imageio-core-cvs20091111-CLEANED/src/share/services/javax.imageio.spi.ImageWriterSpi	2007-09-04 20:21:08.000000000 -0400
++++ zzx2/src/share/services/javax.imageio.spi.ImageWriterSpi	2009-11-11 13:32:59.627697630 -0500
+@@ -44,10 +44,6 @@
+ #
+ # --- JAI-Image I/O ImageWriter plug-ins ---
+ #
+-com.sun.media.imageioimpl.plugins.jpeg.CLibJPEGImageWriterSpi
+-com.sun.media.imageioimpl.plugins.png.CLibPNGImageWriterSpi
+-com.sun.media.imageioimpl.plugins.jpeg2000.J2KImageWriterSpi
+-com.sun.media.imageioimpl.plugins.jpeg2000.J2KImageWriterCodecLibSpi
+ com.sun.media.imageioimpl.plugins.wbmp.WBMPImageWriterSpi
+ com.sun.media.imageioimpl.plugins.bmp.BMPImageWriterSpi
+ com.sun.media.imageioimpl.plugins.gif.GIFImageWriterSpi
